@@ -157,7 +157,7 @@ In order to make an Azure Function only accessible via the replicator's Service 
 
     ![Assigned users only](assets/azure_function/assigned-users.png)
 
-3. Modify the Manifest of the Enterprise Application from step 2. Create a custom [Application Role](https://docs.microsoft.com/en-us/azure/architecture/multitenant-identity/app-roles). It's only possible to assign real users and unfortunatly no Service Principals directly to the function so this additional steps are required. Edit the Application Roles manifest like in this JSON:
+3. Modify the Manifest of the App Registration of your function app. Create a custom [Application Role](https://docs.microsoft.com/en-us/azure/architecture/multitenant-identity/app-roles). It's only possible to assign real users and unfortunatly no Service Principals directly to the function so this additional steps are required. Edit the Application Roles manifest like in this JSON:
 
     ```json
     {
@@ -176,8 +176,8 @@ In order to make an Azure Function only accessible via the replicator's Service 
 
     ![App Role Manifest](assets/azure_function/app-role-manifest.png)
 
-4. Now modify the API permissions of the **App Registration** belonging to the **replicator Service Principal**. This will allow meshStack's replicator to invoke the Azure Function. Open the `API permissions` screen and add the newly created `SPP-Access` Application Role. Don't forget to grant admin consent again afterwards.
+4. Modify the API permissions of the **App Registration** belonging to the **replicator Service Principal**. This will allow meshStack's replicator to invoke the Azure Function. Open the `API permissions` screen and add the newly created `SPP-Access` Application Role. Don't forget to grant admin consent again afterwards.
 
     ![Assign the Application Role to SP](assets/azure_function/sp-role.png)
 
-After these steps, the meshStack replicator should be able to fetch a token scoped to this Application Role so it can invoke the Azure Function using App Authentication.
+After these steps, the meshStack replicator is allowed to fetch a token scoped to this Application Role to invoke the Azure Function using App Authentication.
