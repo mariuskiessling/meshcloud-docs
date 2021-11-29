@@ -212,7 +212,6 @@ However, some identity providers only support a restricted set of user attribute
 
 | Identity Provider | euid attributes supported                   |
 | ----------------- | ------------------------------------------- |
-| AD FS             | every attribute available via claims mapper |
 | AAD               | `userPrincipalName`, `mailNickName`         |
 | GCP               | `primaryEmail`                              |
 
