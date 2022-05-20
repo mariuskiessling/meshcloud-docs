@@ -9,6 +9,7 @@ navigating to the **Administration** Area.
 
 When selecting **Customers** in the menu bar on the left you can see the list of all customers managed by you.
 
+
 ## Create managed Customer Accounts
 
 ### Manually register a new Customer
